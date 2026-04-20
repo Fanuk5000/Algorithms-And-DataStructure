@@ -68,6 +68,8 @@ class StudentDeque:
                     swapped = True
 
             left += 1
+            if not swapped:
+                break
 
     def pyramid_sort_by_avg_mark(self) -> None:
         n = len(self.__data)
