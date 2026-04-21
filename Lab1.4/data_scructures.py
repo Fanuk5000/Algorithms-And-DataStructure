@@ -94,7 +94,7 @@ class StudentDeque:
                 ):  # left child is greater
                     swap = child
 
-                if child + 1 <= end and (
+                if child + 1 < end and (
                     arr[swap].average_mark < arr[child + 1].average_mark
                 ):  # right child is greater
                     swap = child + 1
