@@ -24,5 +24,23 @@ def first_task() -> None:
     print("Solution:", solution)
 
 
+def second_task() -> None:
+    from net_graph import NetworkGraph
+
+    initial_network = [
+        [0, 2, 0, 6, 0],
+        [2, 0, 3, 8, 5],
+        [0, 3, 0, 0, 7],
+        [6, 8, 0, 0, 9],
+        [0, 5, 7, 9, 0],
+    ]
+
+    graph = NetworkGraph(initial_network)
+    mst = graph.prime_algorithm()
+    for row in mst:
+        print(row)
+
+
 if __name__ == "__main__":
     first_task()
+    second_task()
