@@ -56,5 +56,3 @@
 ![Variant 9 1](image.png)
 
 ![Variant 9 2](image-2.png)
-
-![Variant 9 3](image-1.png)
