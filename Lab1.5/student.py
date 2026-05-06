@@ -1,9 +1,13 @@
+from random import randint
+
+
 class Student:
     def __init__(self, name, surname, faculty, skipped_hours=0) -> None:
         self.name = name
         self.surname = surname
         self.faculty = faculty
         self.skipped_hours = skipped_hours
+        self.id = randint(1, 1000)
 
     def __str__(self) -> str:
         return f"Name: {self.name}, Surname: {self.surname}, Faculty: {self.faculty}, Lessons Skipped: {self.skipped_hours}"

@@ -25,7 +25,7 @@ STUDENTS = [
 ]
 
 
-def first_task():
+def first_task() -> None:
     from student import StudentArray
 
     print("-" * 50 + f"{first_task.__name__.capitalize()}" + "-" * 50)
@@ -49,7 +49,7 @@ def first_task():
         print("\nStudent with 100 skipped hours not found")
 
 
-def second_task():
+def second_task() -> None:
     from binary_tree import StudentBinaryTree
 
     print()
@@ -66,7 +66,33 @@ def second_task():
     else:
         print(f"Student with surname 'Johnson' found: {johnson}")
 
+    print("\nOriginal tree:")
+    student_tree.display_beautiful_tree(student_tree.root)
+
+    student_tree.root = student_tree.rotate_left()
+    print("\nTree after left rotation:")
+    student_tree.display_beautiful_tree(student_tree.root)
+
+    student_tree.root = student_tree.rotate_right()
+    print("\nTree after right rotation:")
+    student_tree.display_beautiful_tree(student_tree.root)
+
+
+def third_task() -> None:
+    from binary_tree import StudentTreeBalanced
+
+    print()
+    print("-" * 50 + f"{third_task.__name__.capitalize()}" + "-" * 50)
+    balanced_tree = StudentTreeBalanced()
+
+    for student in STUDENTS[:6]:
+        balanced_tree.insert(student)
+
+    print("\nBalanced tree:")
+    balanced_tree.display_beautiful_tree(balanced_tree.root)
+
 
 if __name__ == "__main__":
     first_task()
     second_task()
+    third_task()
