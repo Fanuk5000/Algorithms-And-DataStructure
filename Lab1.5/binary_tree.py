@@ -137,6 +137,26 @@ class StudentTreeBalanced(StudentBinaryTree):
 
         return self.__balance(current_node)
 
+    @classmethod
+    def display_beautiful_tree(cls, node: None | StudentNode, prefix="", is_left=True):
+        if node is None:
+            return
+
+        cls.display_beautiful_tree(
+            node.right, prefix + ("│   " if is_left else "    "), is_left=False
+        )
+
+        print(
+            prefix
+            + ("└── " if is_left else "┌── ")
+            + str(node.value.surname)
+            + f" (ID: {node.value.id})"
+        )
+
+        cls.display_beautiful_tree(
+            node.left, prefix + ("    " if is_left else "│   "), is_left=True
+        )
+
     def __balance(self, node: StudentNode) -> StudentNode | None:
         if node is None:
             return node
